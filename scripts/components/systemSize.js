@@ -3,6 +3,10 @@ import Base from "../classes/base";
 
 class SystemSize extends Base {
 
+    constructor(props) {
+        super(props);
+    }
+
     handleChange(e) {
     }
 

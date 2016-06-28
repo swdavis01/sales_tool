@@ -1,4 +1,5 @@
 import React from "react";
+import Base from "../classes/base";
 import SystemSize from "./systemSize";
 import GridRate from "./gridRate";
 import DigitalSolarRate from "./digitalSolarRate";
@@ -6,26 +7,20 @@ import Consumption from "./consumption";
 import SolarUsed from "./solarUsed";
 import SystemCost from "./systemCost";
 
-export default React.createClass({
+class Form extends Base {
 
-    //this.state.data = {systemSize: '', gridRate: '', digitalSolarRate: '', consumption: '', solarUsed: '', systemCost: ''}
+    constructor(props) {
+        super(props);
+        this.state  = {systemSize: '4', gridRate: '37.2', digitalSolarRate: '20.0', consumption: '9000', solarUsed: '60', systemCost: '4000'};
+    }
 
-    handleElementChange: function(e) {
+    handleElementChange(e) {
         console.log( 'handleElementChange' );
         console.log( e.target.id + ', ' + e.target.value );
         this.setState({[e.target.id]: e.target.value});
-    },
-
-    getInitialState: function() {
-        return {systemSize: '4', gridRate: '37.2', digitalSolarRate: '20.0', consumption: '9000', solarUsed: '60', systemCost: '4000'};
-    },
-    handleAuthorChange: function(e) {
-        this.setState({author: e.target.value});
-    },
-    handleTextChange: function(e) {
-        this.setState({text: e.target.value});
-    },
-    handleSubmit: function(e) {
+    }
+    
+    handleSubmit(e) {
         e.preventDefault();
         console.log(this.state)
         //var author = this.state.author.trim();
@@ -35,8 +30,9 @@ export default React.createClass({
         //}
        // this.props.onCommentSubmit({author: author, text: text});
         //this.setState({author: '', text: ''});
-    },
-    render: function() {
+    }
+
+    render() {
         return (
             <form className="commentForm" onSubmit={this.handleSubmit}>
 
@@ -54,4 +50,6 @@ export default React.createClass({
             </form>
         );
     }
-});
+}
+
+export default Form;

@@ -3,6 +3,10 @@ import Base from "../classes/base";
 
 class SolarUsed extends Base {
 
+    constructor(props) {
+        super(props);
+    }
+
     handleChange(e) {
     }
 
@@ -20,7 +24,7 @@ class SolarUsed extends Base {
         var createItem = function (item, key) {
             return <option key={key} value={item.value}>{item.name}</option>;
         };
-        
+
         return (
             <div class="formRow">
                 <label>% of Digital Solar Used</label>

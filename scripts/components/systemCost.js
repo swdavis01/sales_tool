@@ -3,6 +3,10 @@ import Base from "../classes/base";
 
 class SystemCost extends Base {
 
+    constructor(props) {
+        super(props);
+    }
+
     handleChange(event) {
         this.setState({value: event.target.value});
     }

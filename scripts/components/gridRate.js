@@ -3,6 +3,10 @@ import Base from "../classes/base";
 
 class GridRate extends Base {
 
+    constructor(props) {
+        super(props);
+    }
+
     handleChange(event) {
         this.setState({value: event.target.value});
     }

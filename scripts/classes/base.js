@@ -4,7 +4,7 @@ class Base extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log('Im Mr Meseeks! Look at me! ' + props.id);
+        //console.log('Im Mr Meseeks! Look at me! ' + props.id);
         //this.state = { name: this.props.initialName };
         //this.handleChange = this.handleChange.bind(this);
     }

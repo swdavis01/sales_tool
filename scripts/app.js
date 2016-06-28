@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CommentForm from "./components/form";
+import Form from "./components/form";
 
-ReactDOM.render(<CommentForm/>, document.getElementById('form'));
+ReactDOM.render(<Form/>, document.getElementById('content'));

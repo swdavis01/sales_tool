@@ -1,17 +1,27 @@
 import React from "react";
+import Base from "../classes/base";
 
-export default React.createClass({
+class Consumption extends Base {
 
-    getInitialState: function() {
-        return {value: '9000'};
-    },
-    handleChange: function(event) {
+    constructor(props) {
+        super(props);
+    }
+
+    handleChange(event) {
         this.setState({value: event.target.value});
-    },
-    render: function() {
+    }
+
+    render() {
         return (
-            <input type="text" placeholder="consumption" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+            <div class="formRow">
+                <label>Annual Electricity Consumption</label>
+                <div>
+                    <input type="text" placeholder="consumption" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+                </div>
+            </div>
         );
     }
 
-});
+}
+
+export default Consumption;

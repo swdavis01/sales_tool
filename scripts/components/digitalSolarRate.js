@@ -1,17 +1,24 @@
 import React from "react";
+import Base from "../classes/base";
 
-export default React.createClass({
+class DigitalSolarRate extends Base {
 
-    getInitialState: function() {
-        return {value: '20.0'};
-    },
-    handleChange: function(event) {
+    handleChange(event) {
         this.setState({value: event.target.value});
-    },
-    render: function() {
+    }
+
+    render() {
         return (
-            <input type="text" placeholder="digital solar rate" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+            <div class="formRow">
+                <label>Digital Solar Rate</label>
+                <div>
+                    <input type="text" placeholder="digital solar rate" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+                </div>
+            </div>
         );
     }
 
-});
+}
+
+export default DigitalSolarRate;
+

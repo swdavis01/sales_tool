@@ -1,30 +1,35 @@
 import React from "react";
+import Base from "../classes/base";
 
-export default React.createClass({
+class SystemSize extends Base {
 
-    getInitialState: function () {
-        return {
-            value: '4',
-            options: [
-                { value: '3', name: '3kW' },
-                { value: '4', name: '4kW' },
-                { value: '5', name: '5kW' }
-            ]
-        };
-    },
-    handleChange: function (e) {
-        this.state.value = e.target.value;
-        this.forceUpdate();
-    },
-    render: function () {
+    handleChange(e) {
+    }
+
+    render() {
+
+        var options = [
+            { value: '3', name: '3kW' },
+            { value: '4', name: '4kW' },
+            { value: '5', name: '5kW' }
+        ];
+
         var createItem = function (item, key) {
             return <option key={key} value={item.value}>{item.name}</option>;
         };
+
         return (
-            <select id={this.props.id} value={this.props.value} onChange={this.props.onChange}>
-                {this.state.options.map(createItem)}
-            </select>
+            <div class="formRow">
+                <label >System Size</label>
+                <div>
+                    <select id={this.props.id} value={this.props.value} onChange={this.props.onChange}>
+                        {options.map(createItem)}
+                    </select>
+                </div>
+            </div>
         );
     }
 
-});
+}
+
+export default SystemSize;

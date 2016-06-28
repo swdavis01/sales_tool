@@ -1,8 +1,12 @@
 import React from "react";
+import Base from "../classes/base";
 
-export default React.createClass({
+class SolarUsed extends Base {
 
-    getInitialState: function () {
+    handleChange(e) {
+    }
+
+    render() {
 
         var options = [];
         var c = 0;
@@ -13,24 +17,22 @@ export default React.createClass({
             i = (i + 4);
         }
 
-        return {
-            value: '60',
-            options: options
-        };
-    },
-    handleChange: function (e) {
-        this.state.value = e.target.value;
-        this.forceUpdate();
-    },
-    render: function () {
         var createItem = function (item, key) {
             return <option key={key} value={item.value}>{item.name}</option>;
         };
+        
         return (
-            <select id={this.props.id} value={this.props.value} onChange={this.props.onChange}>
-                {this.state.options.map(createItem)}
-            </select>
+            <div class="formRow">
+                <label>% of Digital Solar Used</label>
+                <div>
+                    <select id={this.props.id} value={this.props.value} onChange={this.props.onChange}>
+                        {options.map(createItem)}
+                    </select>
+                </div>
+            </div>
         );
     }
 
-});
+}
+
+export default SolarUsed;

@@ -17,7 +17,7 @@ export default React.createClass({
     },
 
     getInitialState: function() {
-        return {systemSize: '', gridRate: '', digitalSolarRate: '', consumption: '', solarUsed: '', systemCost: ''};
+        return {systemSize: '4', gridRate: '37.2', digitalSolarRate: '20.0', consumption: '9000', solarUsed: '60', systemCost: '4000'};
     },
     handleAuthorChange: function(e) {
         this.setState({author: e.target.value});
@@ -39,51 +39,18 @@ export default React.createClass({
     render: function() {
         return (
             <form className="commentForm" onSubmit={this.handleSubmit}>
-            <table>
-                <tbody>
-                <tr>
-                    <th>
-                        <div class="formLabel">System Size:</div>
-                    </th>
-                    <td>
-                        <div class="formComponent"><SystemSize id={'systemSize'} value={this.state.systemSize} onChange={this.handleElementChange}/></div>
-                    </td>
-                    <th>
-                        <div class="formLabel">Grid Rate:</div>
-                    </th>
-                    <td>
-                        <div class="formComponent"><GridRate id={'gridRate'} value={this.state.gridRate} onChange={this.handleElementChange}/></div>
-                    </td>
-                    <th>
-                        <div class="formLabel">Digital Solar Rate:</div>
-                    </th>
-                    <td>
-                        <div class="formComponent"><DigitalSolarRate id={'digitalSolarRate'} value={this.state.digitalSolarRate} onChange={this.handleElementChange}/></div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <div class="formLabel">Annual Electricity Consumption:</div>
-                    </th>
-                    <td>
-                        <div class="formComponent"><Consumption id={'consumption'} value={this.state.consumption} onChange={this.handleElementChange}/></div>
-                    </td>
-                    <th>
-                        <div class="formLabel">% of Digital Solar Used:</div>
-                    </th>
-                    <td>
-                        <div class="formComponent"><SolarUsed id={'solarUsed'} value={this.state.solarUsed} onChange={this.handleElementChange}/></div>
-                    </td>
-                    <th>
-                        <div class="formLabel">System Cost:</div>
-                    </th>
-                    <td>
-                        <div class="formComponent"><SystemCost id={'systemCost'} value={this.state.systemCost} onChange={this.handleElementChange}/></div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <input type="submit" value="Post" />
+
+                <fieldset>
+
+                    <SystemSize id={'systemSize'} value={this.state.systemSize} onChange={this.handleElementChange}/>
+                    <GridRate id={'gridRate'} value={this.state.gridRate} onChange={this.handleElementChange}/>
+                    <DigitalSolarRate id={'digitalSolarRate'} value={this.state.digitalSolarRate} onChange={this.handleElementChange}/>
+                    <Consumption id={'consumption'} value={this.state.consumption} onChange={this.handleElementChange}/>
+                    <SolarUsed id={'solarUsed'} value={this.state.solarUsed} onChange={this.handleElementChange}/>
+                    <SystemCost id={'systemCost'} value={this.state.systemCost} onChange={this.handleElementChange}/>
+
+                </fieldset>
+
             </form>
         );
     }

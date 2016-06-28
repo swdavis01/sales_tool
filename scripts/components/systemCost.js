@@ -1,17 +1,23 @@
 import React from "react";
+import Base from "../classes/base";
 
-export default React.createClass({
+class SystemCost extends Base {
 
-    getInitialState: function() {
-        return {value: '4000'};
-    },
-    handleChange: function(event) {
+    handleChange(event) {
         this.setState({value: event.target.value});
-    },
-    render: function() {
+    }
+
+    render() {
         return (
-            <input placeholder="system cost" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+            <div class="formRow">
+                <label>System Cost</label>
+                <div>
+                    <input placeholder="system cost" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+                </div>
+            </div>
         );
     }
 
-});
+}
+
+export default SystemCost;

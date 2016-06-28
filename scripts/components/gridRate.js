@@ -1,17 +1,23 @@
 import React from "react";
+import Base from "../classes/base";
 
-export default React.createClass({
+class GridRate extends Base {
 
-    getInitialState: function() {
-        return {value: '37.2'};
-    },
-    handleChange: function(event) {
+    handleChange(event) {
         this.setState({value: event.target.value});
-    },
-    render: function() {
+    }
+
+    render() {
         return (
-            <input type="text" placeholder="grid rate" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+            <div class="formRow">
+                <label>Grid Rate</label>
+                <div>
+                    <input type="text" placeholder="grid rate" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+                </div>
+            </div>
         );
     }
 
-});
+}
+
+export default GridRate;

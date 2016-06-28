@@ -1,3 +1,6 @@
+var path = require( 'path' );
+var config = require(path.resolve(__dirname, 'config.json'));
+
 module.exports = {
   entry: "./scripts/app.js",
   output: {
@@ -26,5 +29,8 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.es6']
   },
-  watch: true
+  watch: true,
+  externals: {
+    'Config': JSON.stringify(config)
+  }
 }

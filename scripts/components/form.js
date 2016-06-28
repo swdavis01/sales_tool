@@ -87,7 +87,7 @@ class Form extends Base {
                     <SolarUsed id={'solarUsed'} value={this.state.solarUsed} onChange={this.handleChange}/>
                     <SystemCost id={'systemCost'} value={this.state.systemCost} onChange={this.handleChange}/>
 
-                    <Summary {...this.state.summaryData}/>
+                    { this.state.summaryData ? <Summary {...this.state.summaryData}/> : null }
                 </fieldset>
 
             </form>

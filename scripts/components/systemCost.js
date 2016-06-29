@@ -7,9 +7,9 @@ class SystemCost extends Base {
         super(props);
     }
 
-    handleChange(event) {
+    /*handleChange(event) {
         this.setState({value: event.target.value});
-    }
+    }*/
 
     render() {
         return (

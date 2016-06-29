@@ -6,7 +6,10 @@ class Format extends Base {
     static IRR(value) {
         if (value != undefined) {
             var result = value * 100;
-            return result.toFixed(2);
+            if (result < 0) {
+                result = 0;
+            }
+            return result.toFixed(2) + '%';
         }
     }
 

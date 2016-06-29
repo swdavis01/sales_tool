@@ -12,11 +12,16 @@ class SystemSize extends Base {
 
     render() {
 
-        var options = [
-            { value: '3', name: '3kW' },
-            { value: '4', name: '4kW' },
-            { value: '5', name: '5kW' }
-        ];
+        var options = [];
+        var c = 0;
+        for (var i=3; i <= 40; i++)
+        {
+            options[c] = { value: i, name: i +'kW' }
+            c++;
+            if (i >= 5) {
+                i = (i + 4);
+            }
+        }
 
         var createItem = function (item, key) {
             return <option key={key} value={item.value}>{item.name}</option>;

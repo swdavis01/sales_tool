@@ -16,7 +16,7 @@ class Postcode extends Base {
         return (
 
             <div className={'glyph fs1'}>
-                <Label icon={'icon-map'} label={'Postcode'} />
+                <Label icon={'icon-my_location'} label={'Postcode'} />
                 <fieldset className={'fs0 size1of1 clearfix hidden-false'}>
                     <input type="text" className={'unit size1of1'} placeholder="postcode" id={this.props.id} value={this.props.value} maxLength={this.props.maxLength} onChange={this.props.onChange}/>
                 </fieldset>

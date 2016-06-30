@@ -1,6 +1,7 @@
 import React from "react";
 import Base from "../classes/base";
 import Format from "../classes/format";
+import Label from "../components/label";
 
 var SummaryItemTitle = class SummaryItemTitle extends Base {
     render() {
@@ -30,10 +31,14 @@ class Summary extends Base {
         return (
             <div class="summary">
 
-                <SummaryItemTitle label={'Return On Investment'}/>
-                    <SummaryItem label={'Without Finance'} value={Format.IRR(this.props.ownerEndIRR)} type={'main'}/>
-                    <SummaryItem label={'With Finance'} value={Format.IRR(this.props.ownerEndFinanceIRR)} type={'main'}/>
-                    <SummaryItem label={'Tenant Discount'} value={Format.Percentage(this.props.tenantDiscount)} type={'main'}/>
+                <div className={'glyph fs1'}>
+                    <Label icon={'icon-monetization_on'} label={'ROI'} />
+                    <fieldset className={'fs0 size1of1 clearfix hidden-false'}>
+                        <SummaryItem label={'Without Finance'} value={Format.IRR(this.props.ownerEndIRR)} type={'main'}/>
+                        <SummaryItem label={'With Finance'} value={Format.IRR(this.props.ownerEndFinanceIRR)} type={'main'}/>
+                        <SummaryItem label={'Tenant Discount'} value={Format.Percentage(this.props.tenantDiscount)} type={'main'}/>
+                    </fieldset>
+                </div>
 
                 <SummaryItemTitle label={'Investment'}/>
                 <SummaryItem label={'Investment Payback Years'} value={Format.Int(this.props.ownerPaybackYear)} type={'main'}/>

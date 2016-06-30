@@ -16,7 +16,7 @@ class Consumption extends Base {
             <div class="formRow">
                 <label>Annual Electricity Consumption (KwH)</label>
                 <div>
-                    <input type="text" placeholder="consumption" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+                    <input type="text" placeholder="consumption" id={this.props.id} value={this.props.value} maxLength={this.props.maxLength} onChange={this.props.onChange}/>
                 </div>
             </div>
         );

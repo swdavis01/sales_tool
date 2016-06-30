@@ -16,7 +16,7 @@ class SystemCost extends Base {
             <div class="formRow">
                 <label>System Cost</label>
                 <div>
-                    <input placeholder="system cost" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+                    <input placeholder="system cost" id={this.props.id} value={this.props.value} maxLength={this.props.maxLength} onChange={this.props.onChange}/>
                 </div>
             </div>
         );

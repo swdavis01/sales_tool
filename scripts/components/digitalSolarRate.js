@@ -16,7 +16,7 @@ class DigitalSolarRate extends Base {
             <div class="formRow">
                 <label>Digital Solar Rate (Cents)</label>
                 <div>
-                    <input type="text" placeholder="digital solar rate" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+                    <input type="text" placeholder="digital solar rate" id={this.props.id} value={this.props.value} maxLength={this.props.maxLength} onChange={this.props.onChange}/>
                 </div>
             </div>
         );

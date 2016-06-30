@@ -16,7 +16,7 @@ class Postcode extends Base {
             <div class="formRow">
                 <label>Postcode</label>
                 <div>
-                    <input type="text" placeholder="postcode" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
+                    <input type="text" placeholder="postcode" id={this.props.id} value={this.props.value} maxLength={this.props.maxLength} onChange={this.props.onChange}/>
                 </div>
             </div>
         );

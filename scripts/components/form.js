@@ -195,14 +195,14 @@ class Form extends Base {
 
                 <fieldset>
 
-                    <Postcode id={'postcode'} value={this.state.postcode} onChange={this.handleChange} />
+                    <Postcode id={'postcode'} value={this.state.postcode} maxLength={'4'} onChange={this.handleChange} />
                     <SystemSize id={'systemSize'} value={this.state.systemSize} onChange={this.handleChange}/>
-                    <GridRate id={'gridRate'} value={this.state.gridRate} onChange={this.handleChange}/>
-                    <DigitalSolarRate id={'digitalSolarRate'} value={this.state.digitalSolarRate} onChange={this.handleChange}/>
-                    <Consumption id={'consumption'} value={this.state.consumption} onChange={this.handleChange}/>
+                    <GridRate id={'gridRate'} value={this.state.gridRate} maxLength={'5'} onChange={this.handleChange}/>
+                    <DigitalSolarRate id={'digitalSolarRate'} value={this.state.digitalSolarRate} maxLength={'5'} onChange={this.handleChange}/>
+                    <Consumption id={'consumption'} value={this.state.consumption} maxLength={'6'} onChange={this.handleChange}/>
                     {/*<SolarUsed id={'solarUsed'} value={this.state.solarUsed} onChange={this.handleChange}/>*/}
                     <SunshineHours id={'sunshineHours'} value={this.state} onChange={this.handleChange}/>
-                    <SystemCost id={'systemCost'} value={this.state.systemCost} onChange={this.handleChange}/>
+                    <SystemCost id={'systemCost'} value={this.state.systemCost} maxLength={'6'} onChange={this.handleChange}/>
 
                     {/*{ this.state.summaryData ? <Summary {...this.state.summaryData}/> : null }*/}
                 </fieldset>

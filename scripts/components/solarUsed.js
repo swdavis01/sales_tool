@@ -26,7 +26,7 @@ class SolarUsed extends Base {
         };
 
         return (
-            <div class="formRow">
+            <div className={'formRow'}>
                 <label>% of Digital Solar Used</label>
                 <div>
                     <select id={this.props.id} value={this.props.value} onChange={this.props.onChange}>

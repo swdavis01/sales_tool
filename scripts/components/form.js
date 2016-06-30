@@ -193,19 +193,44 @@ class Form extends Base {
         return (
             <form className="form">
 
-                <fieldset>
+                <div className={'bgc1 clearfix'}>
+                    <div className={'logo'}></div>
+                    <div className={'title'}>Sales Tool</div>
+                </div>
 
-                    <Postcode id={'postcode'} value={this.state.postcode} maxLength={'4'} onChange={this.handleChange} />
-                    <SystemSize id={'systemSize'} value={this.state.systemSize} onChange={this.handleChange}/>
-                    <GridRate id={'gridRate'} value={this.state.gridRate} maxLength={'5'} onChange={this.handleChange}/>
-                    <DigitalSolarRate id={'digitalSolarRate'} value={this.state.digitalSolarRate} maxLength={'5'} onChange={this.handleChange}/>
-                    <Consumption id={'consumption'} value={this.state.consumption} maxLength={'6'} onChange={this.handleChange}/>
-                    {/*<SolarUsed id={'solarUsed'} value={this.state.solarUsed} onChange={this.handleChange}/>*/}
-                    <SunshineHours id={'sunshineHours'} value={this.state} onChange={this.handleChange}/>
-                    <SystemCost id={'systemCost'} value={this.state.systemCost} maxLength={'6'} onChange={this.handleChange}/>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td className={'firstCol'}>
+                            <div className={'clearFix'}>
+                                <Postcode id={'postcode'} value={this.state.postcode} maxLength={'4'} onChange={this.handleChange} />
+                                <SystemSize id={'systemSize'} value={this.state.systemSize} onChange={this.handleChange}/>
+                            </div>
+                            <div className={'clearFix'}>
+                                <GridRate id={'gridRate'} value={this.state.gridRate} maxLength={'5'} onChange={this.handleChange}/>
+                                <DigitalSolarRate id={'digitalSolarRate'} value={this.state.digitalSolarRate} maxLength={'5'} onChange={this.handleChange}/>
+                            </div>
+                            <div className={'clearFix'}>
+                                <SystemCost id={'systemCost'} value={this.state.systemCost} maxLength={'6'} onChange={this.handleChange}/>
+                                <Consumption id={'consumption'} value={this.state.consumption} maxLength={'6'} onChange={this.handleChange}/>
+                            </div>
+                            {/*<SolarUsed id={'solarUsed'} value={this.state.solarUsed} onChange={this.handleChange}/>*/}
+                            <div className={'clearFix'}>
+                                <SunshineHours id={'sunshineHours'} value={this.state} onChange={this.handleChange}/>
+                            </div>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td className={'lastCol'}>
+                            <div id="summary"></div>
+                            <div id="errors"></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
 
-                    {/*{ this.state.summaryData ? <Summary {...this.state.summaryData}/> : null }*/}
-                </fieldset>
+                {/*{ this.state.summaryData ? <Summary {...this.state.summaryData}/> : null }*/}
 
             </form>
         );

@@ -1,5 +1,6 @@
 import React from "react";
 import Base from "../classes/base";
+import Label from "./label";
 
 class SystemSize extends Base {
 
@@ -28,13 +29,14 @@ class SystemSize extends Base {
         };
 
         return (
-            <div class="formRow">
-                <label >System Size</label>
-                <div>
-                    <select id={this.props.id} value={this.props.value} onChange={this.props.onChange}>
+
+            <div className={'glyph fs1'}>
+                <Label icon={'icon-wb_sunny'} label={'System Size'} />
+                <fieldset className={'fs0 size1of1 clearfix hidden-false'}>
+                    <select className={'unit size1of1'} id={this.props.id} value={this.props.value} onChange={this.props.onChange}>
                         {options.map(createItem)}
                     </select>
-                </div>
+                </fieldset>
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import React from "react";
 import Base from "../classes/base";
+import Label from "./label";
 
 var SunshineHoursCheckbox = class SunshineHoursCheckbox extends Base {
     render() {
@@ -63,10 +64,12 @@ class SunshineHours extends Base {
     render() {
 
         return (
-            <div class="formRow">
-                <label>Time Spent At Property</label>
-                <div>
-                    <table>
+
+            <div className={'glyphlarge fs1'}>
+                <Label icon={'icon-timer'} label={'Time Spent At Property'} />
+                <fieldset className={'fs0 size1of1large clearfix hidden-false'}>
+                <div className={'paddingSmall'}>
+                    <table className={'size1of1large'}>
                     <thead>
                     <tr>
                         <th>
@@ -93,7 +96,9 @@ class SunshineHours extends Base {
                     </tbody>
                     </table>
                 </div>
+            </fieldset>
             </div>
+
         );
     }
 

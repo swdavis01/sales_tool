@@ -1,59 +1,74 @@
 body {
-  background: #fff;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  margin: 0;
-  padding: 30px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  color: #5b5b5b;
+  line-height: 125%;
+  letter-spacing: 0;
+  font-family: 'UniverseLTStd_Light', Arial, sans-serif;
 }
 
-a {
-  color: #4183c4;
-  text-decoration: none;
+.logo {
+  background-image: url('/assets/logo-grey.png');
+  background-size: contain;
+  height: 60px;
+  width: 145px;
+  z-index: 100;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-code {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
-  font-size: 12px;
-  margin: 0 2px;
-  padding: 0 5px;
-}
-
-h1, h2, h3, h4 {
-  font-weight: bold;
-  margin: 0 0 15px;
-  padding: 0;
+h1, h2 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 0;
 }
 
 h1 {
-  border-bottom: 1px solid #ddd;
-  font-size: 2.5em;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 h2 {
-  border-bottom: 1px solid #eee;
-  font-size: 2em;
+  font-size: 18px;
 }
 
-h3 {
-  font-size: 1.5em;
+fieldset {
+  padding: 1em;
 }
 
-h4 {
-  font-size: 1.2em;
+fieldset label {
+  margin-right:0.5em;
+  text-align:left;
+  font-weight:bold;
+  width: 150px;
+  font-size: 14px;
 }
 
-p, ul {
-  margin: 15px 0;
+input[type="text"] {
+  width: 100px;
 }
 
-ul {
-  padding-left: 30px;
+select {
+  width: 100px;
+}
+
+.formRow {
+  float: left;
+  padding-right: 20px;
+}
+
+.formRow  {
+  float: left;
+  padding-right: 20px;
+}
+
+.formRowClear  {
+  clear: both;
+  padding-top: 10px;
+}
+
+table th {
+  text-align: left;
 }

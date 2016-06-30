@@ -1,0 +1,40 @@
+/*
+Theme Name: Matter
+Theme URI: 
+Author: the 
+Author URI: 
+Description: 
+Version: 1.0
+License: 
+License URI: 
+Tags:
+Text Domain: 
+*/
+
+/* livereload doesn't like @import */
+
+/*
+for some reason these styles aren't working in Firefox - SCSS doing something odd with the css
+So hard coding
+*/
+
+body div.style-3 div.text-wrap.absolute a,
+body div.style-3 div.text-wrap.absolute p,
+body div.style-3 div.text-wrap.absolute h2 {
+    color: #FFFFFF !important;
+}
+
+@media only screen and (max-width: 480px) {
+    body div.style-3 div.text-wrap.absolute {
+        left: auto;
+        right:auto;
+        padding-bottom: 0;
+        width:100%
+    }
+
+    body div.style-3 div.text-wrap.absolute p,
+    body div.style-3 div.text-wrap.absolute h2 {
+        text-align: left;
+        color: #5b5b5b !important;
+    }
+}

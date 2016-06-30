@@ -23,10 +23,7 @@ class SunshineHours extends Base {
         var label = '';
         var name1 = 'homeMonFri' + type;
         var name2 = 'homeSat' + type;
-        var name3 = 'homeSat' + type;
-        var checked1 = '';
-        var checked2 = '';
-        var checked3 = '';
+        var name3 = 'homeSun' + type;
 
         if (type == 'Morn') {
             label = 'Morning'
@@ -36,17 +33,9 @@ class SunshineHours extends Base {
             label = 'Afternoon'
         }
 
-        //console.log('this.props.value[name1] = ' + this.props.value[name1]);
-        //console.log(this.props.value);
-        checked1 = <SunshineHoursCheckbox id={name1} value={this.props.value[name1]} onChange={this.props.onChange}/>
-        checked2 = <SunshineHoursCheckbox id={name2} value={this.props.value[name2]} onChange={this.props.onChange}/>
-        checked3 = <SunshineHoursCheckbox id={name3} value={this.props.value[name3]} onChange={this.props.onChange}/>
-        if (this.props.value[name1] == 1) {
-        }
-        if (this.props.value[name2] == 1) {
-        }
-        if (this.props.value[name3] == 1) {
-        }
+        var checked1 = <SunshineHoursCheckbox id={name1} value={this.props.value[name1]} onChange={this.props.onChange}/>
+        var checked2 = <SunshineHoursCheckbox id={name2} value={this.props.value[name2]} onChange={this.props.onChange}/>
+        var checked3 = <SunshineHoursCheckbox id={name3} value={this.props.value[name3]} onChange={this.props.onChange}/>
 
         return (
         <tr>
@@ -72,19 +61,6 @@ class SunshineHours extends Base {
     }
 
     render() {
-
-        var options = [];
-        var c = 0;
-        for (var i=20; i <= 100; i++)
-        {
-            options[c] = { value: i, name: i +'%' }
-            c++;
-            i = (i + 4);
-        }
-
-        var createItem = function (item, key) {
-            return <option key={key} value={item.value}>{item.name}</option>;
-        };
 
         return (
             <div class="formRow">

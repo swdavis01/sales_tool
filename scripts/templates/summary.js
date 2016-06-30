@@ -33,8 +33,10 @@ class Summary extends Base {
                 <SummaryItemTitle label={'Return On Investment'}/>
                     <SummaryItem label={'Without Finance'} value={Format.IRR(this.props.ownerEndIRR)} type={'main'}/>
                     <SummaryItem label={'With Finance'} value={Format.IRR(this.props.ownerEndFinanceIRR)} type={'main'}/>
+                    <SummaryItem label={'Tenant Discount'} value={Format.Percentage(this.props.tenantDiscount)} type={'main'}/>
 
                 <SummaryItemTitle label={'Investment'}/>
+                <SummaryItem label={'Investment Payback Years'} value={Format.Int(this.props.ownerPaybackYear)} type={'main'}/>
                 <SummaryItem label={'Investment Cost'} value={Format.Cash(this.props.ownerInvestmentCost)} type={'main'}/>
                     <SummaryItem label={'Equipment Cost'} value={Format.Cash(this.props.ownerEquipmentCost)} type={'sub'}/>
                     <SummaryItem label={'Matter Cost'} value={Format.Cash(this.props.ownerMatterCost)} type={'sub'}/>
@@ -50,7 +52,6 @@ class Summary extends Base {
                 <SummaryItem label={'Year 1 Cash Flow'} value={Format.Cash(this.props.ownerBeginRevenue)} type={'main'}/>
 
                 <SummaryItem label={'Gross Revenue'} value={Format.Cash(this.props.ownerEndGrossRevenue)} type={'main'}/>
-                <SummaryItem label={'Discount'} value={Format.Percentage(this.props.tenantDiscount)} type={'main'}/>
                 <SummaryItem label={'Year 1 Revenue'} value={Format.Cash(this.props.ownerBeginRevenue)} type={'main'}/>
             </div>
         );

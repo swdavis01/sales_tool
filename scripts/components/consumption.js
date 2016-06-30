@@ -14,7 +14,7 @@ class Consumption extends Base {
     render() {
         return (
             <div class="formRow">
-                <label>Annual Electricity Consumption</label>
+                <label>Annual Electricity Consumption (KwH)</label>
                 <div>
                     <input type="text" placeholder="consumption" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
                 </div>

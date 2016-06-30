@@ -9,6 +9,8 @@ import Consumption from "./consumption";
 import SolarUsed from "./solarUsed";
 import SunshineHours from "./sunshineHours";
 import SystemCost from "./systemCost";
+import Errors from "./errors";
+import Validate from "../classes/Validate";
 
 import Summary from "../templates/summary";
 
@@ -42,6 +44,7 @@ class Form extends Base {
             homeSunMid: 1,
             homeSunMorn: 1,
             homeSunNight: 1,
+            errors: [],
             summaryData: null,
             config: config
         };
@@ -62,11 +65,9 @@ class Form extends Base {
             }
         }
 
-        console.log( 'Handle change ' + prefix + ' ' + id + ', ' + value );
-
         this.setState({[id]: value},
             function() {
-                console.log( 'setState update' );
+                //console.log( 'setState update' );
                 this.getSummaryData();
             }
         );
@@ -92,6 +93,38 @@ class Form extends Base {
         this.getSummaryData();
     }
 
+    validate() {
+
+        var res = new Array;
+
+        if (!Validate.Postcode(this.state.postcode)) {
+            res[res.length] = Validate.PostcodeError();
+        }
+
+        if (!Validate.GridRate(this.state.gridRate)) {
+            res[res.length] = 'grid ' + Validate.GridRateError();
+        }
+
+        if (!Validate.GridRate(this.state.digitalSolarRate)) {
+            res[res.length] = 'digital solar ' + Validate.GridRateError();
+        }
+
+        if (!Validate.Consumption(this.state.consumption)) {
+            res[res.length] = Validate.ConsumptionError();
+        }
+
+        if (!Validate.SystemCost(this.state.systemCost)) {
+            res[res.length] = Validate.SystemCostError();
+        }
+
+        if (!Validate.SunshineHours(this.state)) {
+            res[res.length] = Validate.SunshineHoursError();
+        }
+
+        //console.log(res);
+        return res;
+    }
+
     getAsUriParameters(params) {
         var url = '';
         for (var prop in params) {
@@ -102,6 +135,15 @@ class Form extends Base {
     }
 
     getSummaryData() {
+
+        this.state.errors = this.validate();
+        if (this.state.errors.length > 0) {
+            $('#summary').html('');
+            ReactDOM.render(<Errors id={'errors'} value={this.state.errors}/>, document.getElementById('errors'));
+            return;
+        } else {
+            $('#errors').html('');
+        }
 
         var gridRateDiscount = parseFloat( 1 - ( parseFloat( this.state.digitalSolarRate ) / parseFloat( this.state.gridRate ) ) ).toFixed(4);
 
@@ -127,15 +169,15 @@ class Form extends Base {
 
         var url = this.state.config.orbUrl + '/orb/summary/?' + this.getAsUriParameters(params);
 
-        console.log(url);
+        //console.log(url);
 
         $.ajax({
             url: url,
             dataType: 'json',
             type: 'GET',
             success: function(result) {
-                console.log('success');
-                console.log(result.data);
+                //console.log('success');
+                //console.log(result.data);
                 //this.state.summaryData = result.data
                 ReactDOM.render(<Summary {...result.data}/>, document.getElementById('summary'));
             }.bind(this),
@@ -153,7 +195,7 @@ class Form extends Base {
 
                 <fieldset>
 
-                    <Postcode id={'postcode'} value={this.state.postcode} onChange={this.handleChange}/>
+                    <Postcode id={'postcode'} value={this.state.postcode} onChange={this.handleChange} />
                     <SystemSize id={'systemSize'} value={this.state.systemSize} onChange={this.handleChange}/>
                     <GridRate id={'gridRate'} value={this.state.gridRate} onChange={this.handleChange}/>
                     <DigitalSolarRate id={'digitalSolarRate'} value={this.state.digitalSolarRate} onChange={this.handleChange}/>

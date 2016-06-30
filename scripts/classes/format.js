@@ -25,6 +25,12 @@ class Format extends Base {
         }
     }
 
+    static Int(value) {
+        if (value != undefined) {
+            return parseInt(value);
+        }
+    }
+
     constructor(props) {
         super(props);
     }

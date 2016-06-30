@@ -14,7 +14,7 @@ class GridRate extends Base {
     render() {
         return (
             <div class="formRow">
-                <label>Grid Rate</label>
+                <label>Grid Rate (Cents)</label>
                 <div>
                     <input type="text" placeholder="grid rate" id={this.props.id} value={this.props.value} onChange={this.props.onChange}/>
                 </div>

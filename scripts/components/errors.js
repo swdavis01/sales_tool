@@ -1,5 +1,6 @@
 import React from "react";
 import Base from "../classes/base";
+import Label from "../components/label";
 
 class Errors extends Base {
 
@@ -24,7 +25,12 @@ class Errors extends Base {
 
         return (
             <div className="errors">
-                {errors.map(createItem)}
+                <div className={'glyphlarge fs1'}>
+                    <Label icon={'icon-error'} label={'Errors'} />
+                    <fieldset className={'fs0 size1of1large clearfix hidden-false'}>
+                        {errors.map(createItem)}
+                    </fieldset>
+                </div>
             </div>
         );
     }

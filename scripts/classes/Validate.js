@@ -24,6 +24,13 @@ class Validate extends Base {
 
     static GridRate(value) {
         if (value != undefined) {
+
+            var stringValue = value.toString();
+            if (stringValue.slice(-1) == '.') {
+                value = value + '0';
+                console.log(value);
+            }
+
             var regex = /^[+-]?\d+(\.\d+)?$/;
             //console.log(regex.test(value));
             if(!regex.test(value)) {

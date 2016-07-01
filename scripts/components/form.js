@@ -105,6 +105,12 @@ class Form extends Base {
             res[res.length] = Validate.SunshineHoursError();
         }
 
+        if (res.length == 0) {
+            if (this.state.digitalSolarRate >= this.state.gridRate) {
+                res[res.length] = 'The Digital Solar rate must be less than the Grid Rate';
+            }
+        }
+
         //console.log(res);
         return res;
     }
@@ -209,6 +215,7 @@ class Form extends Base {
                     </tr>
                     </tbody>
                 </table>
+                <hr />
 
             </form>
         );

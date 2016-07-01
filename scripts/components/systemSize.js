@@ -25,8 +25,11 @@ class SystemSize extends Base {
         }
 
         var createItem = function (item, key) {
+            //console.log('systemSize createItem');
             return <option key={key} value={item.value}>{item.name}</option>;
         };
+
+        //console.log(options);
 
         return (
 

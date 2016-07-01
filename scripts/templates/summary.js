@@ -21,7 +21,7 @@ class Summary extends Base {
     render() {
 
         return (
-            <div class="summary">
+            <div className={'summary'}>
 
                 <div className={'clearFix'}>
                     <div className={'glyphmedium fs1'}>
@@ -29,7 +29,6 @@ class Summary extends Base {
                         <fieldset className={'fs0 size1of1medium clearfix hidden-false'}>
                             <SummaryItem label={'Without Finance'} value={Format.IRR(this.props.ownerEndIRR)} type={'main'}/>
                             <SummaryItem label={'With Finance'} value={Format.IRR(this.props.ownerEndFinanceIRR)} type={'main'}/>
-                            <SummaryItem label={'Tenant Discount'} value={Format.Percentage(this.props.tenantDiscount)} type={'main'}/>
                         </fieldset>
                     </div>
 
@@ -37,9 +36,7 @@ class Summary extends Base {
                     <Label icon={'icon-monetization_on'} label={'Investment'} />
                         <fieldset className={'fs0 size1of1medium clearfix hidden-false'}>
                             <SummaryItem label={'Investment Payback Years'} value={Format.Int(this.props.ownerPaybackYear)} type={'main'}/>
-                            <SummaryItem label={'Investment Cost'} value={Format.Cash(this.props.ownerInvestmentCost)} type={'main'}/>
-                            <SummaryItem label={'Equipment Cost'} value={Format.Cash(this.props.ownerEquipmentCost)} type={'sub'}/>
-                            <SummaryItem label={'Matter Cost'} value={Format.Cash(this.props.ownerMatterCost)} type={'sub'}/>
+                            <SummaryItem label={'Tenant Discount'} value={Format.Percentage(this.props.tenantDiscount)} type={'main'}/>
                         </fieldset>
                     </div>
                 </div>
@@ -61,9 +58,6 @@ class Summary extends Base {
                         <fieldset className={'fs0 size1of1medium clearfix hidden-false'}>
                             <SummaryItem label={this.props.ownerMaxYieldYears + ' Years Cash Flow'} value={Format.Cash(this.props.ownerEndNetPAYU)} type={'main'}/>
                             <SummaryItem label={'Year 1 Cash Flow'} value={Format.Cash(this.props.ownerBeginRevenue)} type={'main'}/>
-
-                            <SummaryItem label={'Gross Revenue'} value={Format.Cash(this.props.ownerEndGrossRevenue)} type={'main'}/>
-                            <SummaryItem label={'Year 1 Revenue'} value={Format.Cash(this.props.ownerBeginRevenue)} type={'main'}/>
                         </fieldset>
                     </div>
 

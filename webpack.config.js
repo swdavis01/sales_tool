@@ -2,6 +2,7 @@ var path = require( 'path' );
 var config = require(path.resolve(__dirname, 'config.json'));
 
 module.exports = {
+  debug: true,
   entry: "./scripts/app.js",
   output: {
     filename: "bundle.js"
@@ -29,7 +30,6 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.es6']
   },
-  watch: true,
   externals: {
     'Config': JSON.stringify(config)
   }

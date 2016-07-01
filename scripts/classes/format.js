@@ -1,5 +1,6 @@
 import React from "react";
 import Base from "./base";
+var Numeral = require('numeral');
 
 class Format extends Base {
 
@@ -15,13 +16,13 @@ class Format extends Base {
 
     static Cash(value) {
         if (value != undefined) {
-            return '$' + value.toFixed(2);
+            return '$' + Numeral(value.toFixed(2)).format('0,0');
         }
     }
 
     static Percentage(value) {
         if (value != undefined) {
-            return value.toFixed(2) + '%';
+            return Numeral(value).format('0.00%');
         }
     }
 

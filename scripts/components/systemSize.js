@@ -15,7 +15,7 @@ class SystemSize extends Base {
 
         var options = [];
         var c = 0;
-        for (var i=3; i <= 40; i++)
+        for (var i=3; i <= 100; i++)
         {
             options[c] = { value: i, name: i +'kW' }
             c++;

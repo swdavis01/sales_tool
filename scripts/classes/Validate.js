@@ -67,7 +67,7 @@ class Validate extends Base {
             //console.log(regex.test(value));
             if(!regex.test(value)) {
                 return false;
-            } else if (value > 100000) {
+            } else if (value > 500000) {
                 return false;
             } else {
                 return true;
@@ -77,7 +77,7 @@ class Validate extends Base {
     }
 
     static ConsumptionError() {
-        return 'Consumption should be a number up to 100000 KwH';
+        return 'Consumption should be a number up to 500000 KwH';
     }
 
     static SystemCost(value) {
@@ -86,7 +86,7 @@ class Validate extends Base {
             //console.log(regex.test(value));
             if(!regex.test(value)) {
                 return false;
-            } else if (value > 100000) {
+            } else if (value > 500000) {
                 return false;
             } else {
                 return true;
@@ -96,7 +96,7 @@ class Validate extends Base {
     }
 
     static SystemCostError() {
-        return 'System cost should be a number up to $100000';
+        return 'System cost should be a number up to $500,000';
     }
 
     static SunshineHours(value) {

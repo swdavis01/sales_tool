@@ -22,9 +22,9 @@ class Form extends Base {
         var config = require('Config');
 
         this.state  = {
-            postcode: '3000',
+            postcode: '4000',
             systemSize: 5,
-            gridRate: 37.2,
+            gridRate: 25,
             digitalSolarRate: 19.5,
             consumption: 9000,
             solarUsed: 60,

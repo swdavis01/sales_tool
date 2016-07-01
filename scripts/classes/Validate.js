@@ -19,7 +19,7 @@ class Validate extends Base {
     }
 
     static PostcodeError() {
-        return 'postcode must be a 4 digit number';
+        return 'Postcode must be a 4 digit number';
     }
 
     static GridRate(value) {
@@ -77,7 +77,7 @@ class Validate extends Base {
     }
 
     static ConsumptionError() {
-        return 'consumption value should be a number up to 100000 KwH';
+        return 'Consumption should be a number up to 100000 KwH';
     }
 
     static SystemCost(value) {
@@ -96,7 +96,7 @@ class Validate extends Base {
     }
 
     static SystemCostError() {
-        return 'system cost should be a number up to $100000';
+        return 'System cost should be a number up to $100000';
     }
 
     static SunshineHours(value) {
@@ -120,7 +120,7 @@ class Validate extends Base {
     }
 
     static SunshineHoursError() {
-        return 'at least one time spent at home option must be checked';
+        return 'At least one time spent at home option must be checked';
     }
 
     constructor(props) {

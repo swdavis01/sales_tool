@@ -73,22 +73,6 @@ class Form extends Base {
         );
     }
 
-    /*shouldComponentUpdate(newProps, newState) {
-        console.log( 'shouldComponentUpdate' );
-        this.getData();
-        return true;
-    }*/
-
-    /*componentWillUpdate(nextProps, nextState) {
-        console.log( 'componentWillUpdate' );
-        this.getSummaryData();
-    }*/
-
-    /*componentDidUpdate(prevProps, prevState) {
-        console.log( 'componentDidUpdate' );
-        this.getSummaryData();
-    }*/
-
     componentDidMount() {
         this.getSummaryData();
     }
@@ -102,11 +86,11 @@ class Form extends Base {
         }
 
         if (!Validate.GridRate(this.state.gridRate)) {
-            res[res.length] = 'grid ' + Validate.GridRateError();
+            res[res.length] = 'Grid ' + Validate.GridRateError();
         }
 
         if (!Validate.GridRate(this.state.digitalSolarRate)) {
-            res[res.length] = 'digital solar ' + Validate.GridRateError();
+            res[res.length] = 'Digital Solar ' + Validate.GridRateError();
         }
 
         if (!Validate.Consumption(this.state.consumption)) {
@@ -138,8 +122,7 @@ class Form extends Base {
 
         this.state.errors = this.validate();
         if (this.state.errors.length > 0) {
-            $('#summary').html('');
-            ReactDOM.render(<Errors id={'errors'} value={this.state.errors}/>, document.getElementById('errors'));
+            ReactDOM.render(<Errors id={'errors'} value={this.state.errors}/>, document.getElementById('results'));
             return;
         } else {
             $('#errors').html('');
@@ -176,14 +159,12 @@ class Form extends Base {
             dataType: 'json',
             type: 'GET',
             success: function(result) {
-                //console.log('success');
-                //console.log(result.data);
-                //this.state.summaryData = result.data
-                ReactDOM.render(<Summary {...result.data}/>, document.getElementById('summary'));
+                ReactDOM.render(<Summary {...result.data}/>, document.getElementById('results'));
             }.bind(this),
             error: function(xhr, status, err) {
-                //this.setState({data: comments});
-                console.error(url, status, err.toString());
+                this.state.errors = [];
+                this.state.errors[0] = 'A server error has occured';
+                ReactDOM.render(<Errors id={'errors'} value={this.state.errors}/>, document.getElementById('results'));
             }.bind(this)
         });
 
@@ -223,14 +204,11 @@ class Form extends Base {
                             &nbsp;
                         </td>
                         <td className={'lastCol'}>
-                            <div id="summary"></div>
-                            <div id="errors"></div>
+                            <div id="results"></div>
                         </td>
                     </tr>
                     </tbody>
                 </table>
-
-                {/*{ this.state.summaryData ? <Summary {...this.state.summaryData}/> : null }*/}
 
             </form>
         );
